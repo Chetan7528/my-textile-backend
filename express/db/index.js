@@ -1,16 +1,15 @@
 'use strict';
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
-const config = require("config");
 // module.exports = () => {
 const options = {
     keepAlive: 1000,
     useNewUrlParser: true,
     useCreateIndex: true,
-    useFindAndModify:false,
+    useFindAndModify: false,
     useUnifiedTopology: true
 };
-mongoose.connect(config.get("database.url").replace('{password}', process.env.DB_PASSWORD), options, (err, db) => {
+mongoose.connect(process.env.MONGODB_URI, options, (err, db) => {
     if (err) console.log('Mongoose connection error', err.message);
 });
 mongoose.connection.on('connected', function () {
