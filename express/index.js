@@ -69,4 +69,5 @@ require("./passport")(passport);
 //Routes configuration
 require("./../src/routes")(apps);
 const app = server;
+app.app = apps;
 module.exports = app;
