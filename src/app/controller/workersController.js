@@ -40,6 +40,7 @@ module.exports = {
           rate: payload.rate,
           job_id: payload.job_id,
           worker_id: w._id,
+          jober_id: payload.jober_id,
         };
         await Jobs.findByIdAndUpdate(
           payload.job_id,
@@ -57,6 +58,7 @@ module.exports = {
         rate: payload.rate,
         job_id: payload.job_id,
         worker_id: payload.worker_id,
+        jober_id: payload.jober_id,
       };
 
       await Jobs.findByIdAndUpdate(
@@ -101,6 +103,7 @@ module.exports = {
         "workers.$.pcs": payload.pcs,
         "workers.$.rate": payload.rate,
         "workers.$.worker_id": payload.worker_id,
+        "workers.$.jober_id": payload.jober_id,
       },
     };
 

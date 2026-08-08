@@ -74,6 +74,12 @@ const JobsSchema = new Schema(
           type: mongoose.Types.ObjectId,
           ref: "Workers",
         },
+        // The jober (logged-in user) who added this worker entry, so the
+        // Jober-side job details page can show only their own workers.
+        jober_id: {
+          type: mongoose.Types.ObjectId,
+          ref: "User",
+        },
       },
     ],
 
